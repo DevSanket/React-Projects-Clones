@@ -1,19 +1,35 @@
 import { Input } from '@material-ui/core';
 import { CalendarViewDay, Create, EventNote, Image, Subscriptions } from '@material-ui/icons';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { db } from '../../firebase';
 import './feed.css';
 import InputOpitions from './InputOptions';
 import Post from './Posts/Posts';
 
 
-const sendPost = (e) => {
-    e.preventDefault();
-    
-}
+
 
 
 const Feed = () => {
     const [posts,setPosts] = useState([]);
+
+    useEffect(() => {
+        db.collection("posts").onSnapshot((snapshot) => setPosts(
+            setPosts(
+                snapshot.docs.map((doc) => ({
+                    id:doc.id,
+                    data:doc.data()
+                }))
+            )
+        ))
+    },[])
+
+    const sendPost = (e) => {
+        e.preventDefault();
+        setPosts();
+
+    }
+    
     return ( <div className="feed">
             <div className="feed_inputContainer">
                 <div className="feed_input">
