@@ -1,10 +1,18 @@
 import { BusinessCenter, Home, Message, Notifications, Search, SupervisorAccount } from '@material-ui/icons';
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, selectUser } from '../../features/userSlice';
+import { auth } from '../../firebase';
 import './Header.css';
 import HeaderOptions from './HeaderOptions';
 
 
 const Header = () => {
+    const dispatch = useDispatch();
+    const logOutofApp = () => {
+        dispatch(logout());
+        auth.signOut();
+    }
     return ( <div className="Header">
 
 
@@ -13,7 +21,7 @@ const Header = () => {
             <div className="header_search">
                 {/* SearchIcon  */}
                 <Search/>
-                <input type="text"/>
+                <input placeholder="Search" type="text"/>
             </div>
         </div>
         <div className="header_right">
@@ -22,7 +30,7 @@ const Header = () => {
                 <HeaderOptions Icon={BusinessCenter} title="Jobs"/>
                 <HeaderOptions Icon={Message} title="Messaging"/>
                 <HeaderOptions Icon={Notifications} title="Notifications"/>
-                <HeaderOptions avatar="https://yt3.ggpht.com/ytc/AAUvwnjOB8ByAIOKwcQL2sD2_zv6HojbVVpt_iYbmQ1-Og=s900-c-k-c0x00ffffff-no-rj" title="You"/>
+                <HeaderOptions avatar={true} title="You" onClick={logOutofApp}/>
                 
         </div>
 
