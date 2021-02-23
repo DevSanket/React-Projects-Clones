@@ -4,15 +4,17 @@ import "./Widget.css";
 
 const Widgets = () => {
     const newsArticle = (heading,subtitle) => {
-        <div className="widgets_article">
+        return (
+            <div className="widgets_article">
             <div className="widgets_articleLeft">
-                <FiberManualRecord/>
+                
             </div>
             <div className="widgets_articleRight">
-                <h4>{heading}</h4>
+                <h4><FiberManualRecord className="icon"/> {heading}</h4>
                 <p>{subtitle}</p>
             </div>
         </div>
+     )
     }
     return ( 
         <div className="widgets">
@@ -20,6 +22,8 @@ const Widgets = () => {
                 <h2>Linkdin News</h2>
                 <Info/>
             </div>
+            {newsArticle("Coronavirus: Lagos updates", "Tops news - 324 readers")}
+      {newsArticle("Bitcoin hits new high", "Tops news - 2,324 readers")}
         </div>
      );
 }
