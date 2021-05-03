@@ -3,32 +3,44 @@ import './App.css';
 import Header from './components/Header/Header';
 import HomePage from './Pages/Homepage/homepage.component';
 import ShopPage from './Pages/Shop/Shop';
+import SignInAndSignUpPage from './Pages/Sign-in-and-Sign-up/Sign-in-and-Sign-up';
+import React, { Component } from 'react';
+import { auth } from './Firebase/firebase.utils';
 
-function App() {
+class App extends Component {
+  constructor(){
+    super();
+    this.state ={
+      currentUser : null
+    }
+  }
 
-  const HatsPage = () => (
-    <div>
-      <h1>HATS PAGE</h1>
-    </div>
-  );
+  unsubscribeFromAuth = null;
 
-  const TopicPageDetails = (props) => (
-    <div>
-      <h1>Topic Page {props.match.params.topicId}</h1>
-    </div>
-  )
 
-  return (
-    <div className="App">
-      <Header/>
-      <Switch>
-        <Route exact path='/' component={HomePage}/>
-        <Route  path='/shop' component={ShopPage}/>
-        <Route  path='/shop/hats' component={HatsPage}/>
-        <Route path="/topic/:topicId" component={TopicPageDetails}/>
-      </Switch>
-    </div>
-  );
+  componentDidMount(){
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({currentUser : user});
+      console.log(user);
+    })
+  }
+
+  componentWillUnmount(){
+    this.unsubscribeFromAuth();
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <Header currentUser={this.state.currentUser}/>
+        <Switch>
+          <Route exact path='/' component={HomePage}/>
+          <Route  path='/shop' component={ShopPage}/>
+          <Route  path='/signin' component={SignInAndSignUpPage}/>
+        </Switch>
+      </div> 
+    );
+  }
 }
-
+ 
 export default App;
