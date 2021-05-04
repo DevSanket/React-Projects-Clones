@@ -39,7 +39,22 @@ class Directory extends Component {
                     id:5,
                     size:'large',
                     linkUrl:'shop/cupcake'
+                },
+                {
+                    title:'Muffins',
+                    imageUrl:'https://www.biggerbolderbaking.com/wp-content/uploads/2020/05/Bakery-Style-Lemon-Blueberry-Muffins-WS-Thumbnail.jpg',
+                    id:6,
+                    size:'large',
+                    linkUrl:'shop/muffins'
+                },
+                {
+                    title:'Swiss Roll',
+                    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/d/da/Sri_Lankan_Swiss_roll.jpg',
+                    id:7,
+                    size:'large',
+                    linkUrl:'shop/swiss_roll'
                 }
+
 
 
 
