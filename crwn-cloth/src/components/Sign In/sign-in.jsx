@@ -5,7 +5,7 @@ import FormInput from "../form-input/form-input";
 import "./sign-in.scss";
 
 
-class SignIn extends React.Component {
+class SignIn extends Component {
   constructor(props) {
     super(props);
 
