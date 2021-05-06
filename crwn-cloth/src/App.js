@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router';
+import { Redirect, Route, Switch } from 'react-router';
 import './App.css';
 import Header from './components/Header/Header';
 import HomePage from './Pages/Homepage/homepage.component';
@@ -16,9 +16,8 @@ class App extends Component {
   componentDidMount(){
     const { setCurrentUser } = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      // this.setState({currentUser : user});
-      // createUserProfileDocument(user);
       if(userAuth){
+        //Adding the userRef in setCurrentUser State
         const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot(snapshot => {
           setCurrentUser({
@@ -47,16 +46,28 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route  path='/shop' component={ShopPage}/>
-          <Route  path='/signin' component={SignInAndSignUpPage}/>
+          <Route  exact path='/signin' render={
+            () => 
+            this.props.currentUser ? (
+            <Redirect to="/"/>
+            ) :(<SignInAndSignUpPage />)
+          }/>
         </Switch>
       </div> 
     );
   }
 }
 
+
+//To get the current user of state
+const mapStateProps =  ({user}) => ({
+  currentUser : user.currentUser
+})
+
+//using for set State of current user in redux
 const mapDispatchProps = dispatch => ({
   setCurrentUser : user => dispatch(setCurrentUser(user))
 })
 
 
-export default connect(null,mapDispatchProps)(App);
+export default connect(mapStateProps,mapDispatchProps)(App);
