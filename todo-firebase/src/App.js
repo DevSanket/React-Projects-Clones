@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { db } from './firebase.utils';
 import firebase from 'firebase';
-import { Modal } from '@material-ui/core';
+
 
 function App() {
 
   const [todos,setTodos] = useState([]);
   const [input,setInput] = useState('');
-  const [open,setOpen] = useState(false);
-  const [update,setUpdate] = useState();
+
 
 
   //using useEffect we are adding data from firebase to setTodos
@@ -38,33 +37,6 @@ function App() {
     setInput('');
   }
 
-  const updateTodo = (todo) => {
-    db.collection('todos').doc(todo.id).set(
-      {
-        todo:input,
-      },
-      {
-        merge:true
-      }
-    );
-    setOpen(false)
-  }
-
-const showModel = (todo) => {
-  setOpen(true);
-  
-  return (
-  <Modal open={open} onClose={e => setOpen(false)}>
-  <div className="card">
-      <h3>Update The Task</h3>
-      <input type="text" className="form-control" onChange={e => setInput(e.target.value)} value={input}/>
-        <button 
-          disabled={!input}
-          type="submit" className="btn btn-primary" onClick={updateTodo(todo)}>Update</button>
-  </div>
-  </Modal>
- )
-}
 
   return (
     <div className="App">
