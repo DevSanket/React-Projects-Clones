@@ -7,7 +7,7 @@ import firebase from 'firebase';
 function App() {
 
   const [todos,setTodos] = useState([]);
-  const [input,setInput] = useState('');
+  const [input,setInput] = useState('');  
 
 
 
