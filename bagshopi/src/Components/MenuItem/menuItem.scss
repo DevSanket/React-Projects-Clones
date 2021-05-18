@@ -95,6 +95,9 @@
     opacity: 0;
     z-index: 10;
   }
+  .containers .box .buy:active{
+    background-color: rgb(73, 165, 240);
+  }
   .containers .box:hover .buy {
     align-items: center;
     margin-bottom: 20px;
