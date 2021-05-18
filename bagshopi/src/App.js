@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import { auth, createUserProfileDocument } from './Firebase/firebase.util';
 import Checkout from './Pages/Checkout/Checkout';
 import Orders from './Pages/Orders/orders';
+import Contact from './Pages/Contact/Contact';
 
 class App extends React.Component {
   state = { 
@@ -54,6 +55,7 @@ class App extends React.Component {
         } />
          <Route exact path="/checkout" component={Checkout}/>
          <Route exact path="/orders" component={Orders} />
+         <Route exact path="/contact" component={Contact} />
       </Switch>
     </div>
      );

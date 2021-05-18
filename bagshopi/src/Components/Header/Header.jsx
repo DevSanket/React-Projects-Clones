@@ -23,7 +23,7 @@ const Header = ({currentUser}) => {
             <Link to="/orders" className="option">
                 MY ORDERS
             </Link>
-            <Link className="option" to="/about_us">
+            <Link className="option" to="/contact">
                 CONTACT
             </Link>
             {
