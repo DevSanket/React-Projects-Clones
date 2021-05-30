@@ -1,39 +1,79 @@
-export const SHOP_DATA = [
+export const SHOP_DATAS = [
     {
         id:1,
-        name:"Nikon",
+        name:"Impact",
         imageUrl:"https://www.jing.fm/clipimg/full/136-1361384_impact-ergonomic-backpack-ipeg-130-pink-school-bags.png",
-        price:499
+        price:999
     },
     {
         id:2,
-        name:"Demo",
-        imageUrl:"https://www.pngkit.com/png/full/87-875396_school-bag-png-background-image-school-bag-images.png",
-        price:300
+        name:"Fastrack",
+        imageUrl:"https://i.pinimg.com/originals/b3/0d/1d/b30d1d5de7356199c7e557c7c6e490f6.png",
+        price:1300
     }
     ,{
         id:3,
-        name:"Demo",
-        imageUrl:"https://www.pngkit.com/png/full/87-875396_school-bag-png-background-image-school-bag-images.png",
-        price:300
+        name:"Women Bag",
+        imageUrl:"https://www.transparentpng.com/thumb/women-bag/5n1fgv-red-textured-women-bag-png.png",
+        price:700
     }
     ,{
         id:4,
-        name:"Demo",
-        imageUrl:"https://www.pngkit.com/png/full/87-875396_school-bag-png-background-image-school-bag-images.png",
-        price:300
+        name:"Nike Lazer",
+        imageUrl:"https://purepng.com/public/uploads/large/purepng.com-nike-lazer-bagbagbackpacksnike-lazer-bagtourist-bags-1421526271674pxn0o.png",
+        price:1300
     }
     ,{
         id:5,
-        name:"Demo",
+        name:"BlueSky",
         imageUrl:"https://www.pngkit.com/png/full/87-875396_school-bag-png-background-image-school-bag-images.png",
-        price:300
+        price:500
     }
     ,{
         id:6,
-        name:"Nikyy",
+        name:"Acer-Gaming",
         imageUrl:"https://pngimg.com/uploads/backpack/backpack_PNG6321.png",
-        price:300
+        price:900
+    }
+    ,{
+        id:7,
+        name:"Intels",
+        imageUrl:"https://freepngimg.com/thumb/gloves/55145-4-school-bag-free-transparent-image-hd.png",
+        price:600
+    },{
+        id:8,
+        name:"SkyBlue",
+        imageUrl:"https://purepng.com/public/uploads/large/purepng.com-strolley-suitcase-luggageclothingstrolley-suitcase-luggagefashion-bag-object-trolley-travel-suitcase-traveller-wheel-tourist-luggage-trip-vacation-journey-strolley-631522327208pkgsz.png",
+        price:2600
+    }
+    ,{
+        id:9,
+        name:"Laggage",
+        imageUrl:"https://purepng.com/public/uploads/large/purepng.com-blue-luggageluggagesuitcasehigh-qualitywaterproofblue-1421526381397xvcwz.png",
+        price:2100
+    }
+    ,{
+        id:10,
+        name:"Travel-Bag",
+        imageUrl:"https://pnglux.com/wp-content/uploads/2021/02/Women-bag-PNG-image-File-990x990.png",
+        price:2100
+    },{
+        id:11,
+        name:"Camera_bag",
+        imageUrl:"https://cdn-4.nikon-cdn.com/e/Q5NM96RZZo-MRItDefY8uS3cNHsVS3bpm3NYPzZUKnZWeuQewXy6hJgEICzqIFPjdBWFOsLI3SZd4xewwp2FNFW08oijKoagTe_naO-d4cg=/Views/17009-compact-bag-front.png",
+        price:700
+    },
+    {
+        id:12,
+        name:"Nikon-Collage",
+        imageUrl:"https://cdn-4.nikon-cdn.com/e/Q5NM96RZZo-MRItDefY8uS3cNHsVS3bpm3NYPzZUKnZWeuQewXy6hJgEICzqIFPjdBWFOsLH3SY9EWama5jslAZhYMilDKU2/Views/17006-Compact-Backpack.png",
+        price:900
+    },
+    {
+        id:13,
+        name:"Women Handbag",
+        imageUrl:"https://www.transparentpng.com/thumb/women-bag/DndFCu-women-handbag-photos.png",
+        price:500
     }
 ]
 
