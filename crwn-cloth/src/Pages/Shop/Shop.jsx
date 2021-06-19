@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Route } from "react-router";
 import CollectionsOverviewContainer from "../../components/collections-overview/collection-overview.container";
-import { fetchCollectionsStartAsync} from "../../Redux/shop/shop.actions";
+import { fetchCollectionStart } from "../../Redux/shop/shop.actions";
 import CollectionPageContainer from "../Collection/Collection.container";
 
 
@@ -11,8 +11,8 @@ class ShopPage extends React.Component {
 
       //Using the redux-thunk or Asyncronus Redux
 
-    const { fetchCollectionStartAsync} = this.props;
-    fetchCollectionStartAsync();
+    const { fetchCollectionStart} = this.props;
+    fetchCollectionStart();
     
      // Old Approch
     //So complicated to get the data from firebase
@@ -56,7 +56,7 @@ class ShopPage extends React.Component {
 
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchCollectionStartAsync : () => dispatch(fetchCollectionsStartAsync())
+  fetchCollectionStart : () => dispatch(fetchCollectionStart())
 });
 
 export default connect(null, mapDispatchToProps)(ShopPage);
