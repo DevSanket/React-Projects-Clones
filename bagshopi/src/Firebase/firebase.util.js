@@ -3,15 +3,15 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 var firebaseConfig = {
-    apiKey: "AIzaSyDRQ6fbM4Y7COqtoWn9IC3jSR7jw89rloQ",
-    authDomain: "reactprojects-f6951.firebaseapp.com",
-    projectId: "reactprojects-f6951",
-    storageBucket: "reactprojects-f6951.appspot.com",
-    messagingSenderId: "1004942694477",
-    appId: "1:1004942694477:web:5e17bd47241682e679a404",
-    measurementId: "G-YM7Y7WPTRK"
-  };
-  // Initialize Firebase
+  apiKey: "AIzaSyA7Xp4xbpf1r0zZycOmxunXsoJEY_9S1k4",
+  authDomain: "fir-eb536.firebaseapp.com",
+  projectId: "fir-eb536",
+  storageBucket: "fir-eb536.appspot.com",
+  messagingSenderId: "696265605395",
+  appId: "1:696265605395:web:e6b0c9feca0a8a2d98dae6",
+  measurementId: "G-LLCE6B76P7"
+};
+// Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 //   firebase.analytics();
 

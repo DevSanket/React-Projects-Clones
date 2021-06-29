@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './Components/Header/Header';
 import { Redirect, Route, Switch } from 'react-router';
-import HomePage from './Pages/HomePage/homepage';
+import HomePage from './Pages/HomePage/HomePage';
 import Register from './Pages/Register/Register';
 import React from 'react';
 import { createStructuredSelector } from 'reselect';

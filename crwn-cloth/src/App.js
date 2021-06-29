@@ -5,31 +5,36 @@ import HomePage from "./Pages/Homepage/homepage.component";
 import ShopPage from "./Pages/Shop/Shop";
 import SignInAndSignUpPage from "./Pages/Sign-in-and-Sign-up/Sign-in-and-Sign-up";
 import React, { Component } from "react";
-import { auth, createUserProfileDocument } from "./Firebase/firebase.utils";
+// import { auth, createUserProfileDocument } from "./Firebase/firebase.utils";
 import { connect } from "react-redux";
-import { setCurrentUser } from "./Redux/User/user.actions";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./Redux/User/user.selector";
 import CheckoutPage from "./Pages/Checkout/checkout";
+import { checkUserSession } from "./Redux/User/user.actions";
 
 class App extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-      if (userAuth) {
-        //Adding the userRef in setCurrentUser State
-        const userRef = await createUserProfileDocument(userAuth);
-        userRef.onSnapshot((snapshot) => {
-          setCurrentUser({
-            id: snapshot.id,
-            ...snapshot.data(),
-          });
-        });
-      }
-      setCurrentUser(userAuth);
-    });
+    // const { setCurrentUser } = this.props;
+    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+    //   if (userAuth) {
+    //     //Adding the userRef in setCurrentUser State
+    //     const userRef = await createUserProfileDocument(userAuth);
+    //     userRef.onSnapshot((snapshot) => {
+    //       setCurrentUser({
+    //         id: snapshot.id,
+    //         ...snapshot.data(),
+    //       });
+    //     });
+    //   }
+    //   setCurrentUser(userAuth);
+    // });
+
+    const { checkUserSession} = this.props;
+    checkUserSession();
+
+
   }
 
   componentWillUnmount() {
@@ -69,8 +74,12 @@ const mapStateProps = createStructuredSelector({
 });
 
 //using for set State of current user in redux
-const mapDispatchProps = (dispatch) => ({
-  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
-});
+// const mapDispatchProps = (dispatch) => ({
+//   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+// });
 
-export default connect(mapStateProps, mapDispatchProps)(App);
+const mapDispatchProps = dispatch => ({
+  checkUserSession : () => dispatch(checkUserSession())
+})
+
+export default connect(mapStateProps,mapDispatchProps)(App);
